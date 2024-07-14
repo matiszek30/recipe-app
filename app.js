@@ -49,7 +49,7 @@ function addRecipe() {
     document.querySelectorAll('[name="steps"]').forEach((input) => (input.value = ''));
     document.querySelectorAll('[name="ingredients"]').forEach((input) => (input.value = ''));
     document.querySelectorAll('[name="quantity"]').forEach((input) => (input.value = ''));
-    document.querySelectorAll('[name="unit-type"]').forEach((input) => (input.value = 'weight'));
+    document.querySelectorAll('[name="unit-type"]').forEach((input) => (input.value = 'grams'));
     document.getElementById('protein').value = '';
     document.getElementById('fat').value = '';
     document.getElementById('carbs').value = '';
@@ -89,11 +89,11 @@ document.getElementById('add-ingredient').addEventListener('click', () => {
     const ingredientCount = ingredientContainer.children.length + 1;
     const newIngredient = document.createElement('p');
     newIngredient.innerHTML = `Ingredient ${ingredientCount}: <input type="text" name="ingredients" placeholder="Ingredient name">
+    <input type="number" name="quantity" placeholder="Quantity">
     <select name="unit-type">
-        <option value="weight">Weight (grams)</option>
+        <option value="grams">Grams</option>
         <option value="amount">Amount</option>
         <option value="tablespoons">Tablespoons</option>
-    </select>
-    <input type="number" name="quantity" placeholder="Quantity">`;
+    </select>`;
     ingredientContainer.appendChild(newIngredient);
 });
