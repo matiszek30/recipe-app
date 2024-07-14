@@ -63,11 +63,11 @@ function loadRecipes() {
     recipes.forEach((recipe) => {
         const item = document.createElement('li');
         item.innerHTML = `
-            <h3>${recipe.name}</h3>
+            <h3 class="text-xl font-semibold">${recipe.name}</h3>
             <p>Steps:</p>
-            <ul>${recipe.steps.map((step) => `<li>${step}</li>`).join('')}</ul>
+            <ul class="list-disc list-inside">${recipe.steps.map((step) => `<li>${step}</li>`).join('')}</ul>
             <p>Ingredients:</p>
-            <ul>${recipe.ingredients.map((ingredient) => `<li>${ingredient.name}: ${ingredient.quantity} ${ingredient.unit}</li>`).join('')}</ul>
+            <ul class="list-disc list-inside">${recipe.ingredients.map((ingredient) => `<li>${ingredient.name}: ${ingredient.quantity} ${ingredient.unit}</li>`).join('')}</ul>
             <p>Protein: ${recipe.nutrition.protein}g, Fat: ${recipe.nutrition.fat}g, Carbs: ${recipe.nutrition.carbs}g, Calories: ${recipe.nutrition.calories}</p>
         `;
         list.appendChild(item);
@@ -80,7 +80,7 @@ document.getElementById('add-step').addEventListener('click', () => {
     const stepContainer = document.getElementById('steps-container');
     const stepCount = stepContainer.children.length + 1;
     const newStep = document.createElement('p');
-    newStep.innerHTML = `Step ${stepCount}: <input type="text" name="steps" placeholder="Step description">`;
+    newStep.innerHTML = `Step ${stepCount}: <input type="text" name="steps" placeholder="Step description" class="w-full p-2 mt-2 bg-gray-700 text-white border border-gray-600 rounded">`;
     stepContainer.appendChild(newStep);
 });
 
@@ -88,9 +88,9 @@ document.getElementById('add-ingredient').addEventListener('click', () => {
     const ingredientContainer = document.getElementById('ingredients-container');
     const ingredientCount = ingredientContainer.children.length + 1;
     const newIngredient = document.createElement('p');
-    newIngredient.innerHTML = `Ingredient ${ingredientCount}: <input type="text" name="ingredients" placeholder="Ingredient name">
-    <input type="number" name="quantity" placeholder="Quantity">
-    <select name="unit-type">
+    newIngredient.innerHTML = `Ingredient ${ingredientCount}: <input type="text" name="ingredients" placeholder="Ingredient name" class="w-full p-2 mt-2 bg-gray-700 text-white border border-gray-600 rounded">
+    <input type="number" name="quantity" placeholder="Quantity" class="w-full p-2 mt-2 bg-gray-700 text-white border border-gray-600 rounded">
+    <select name="unit-type" class="w-full p-2 mt-2 bg-gray-700 text-white border border-gray-600 rounded">
         <option value="grams">Grams</option>
         <option value="amount">Amount</option>
         <option value="tablespoons">Tablespoons</option>

@@ -4,40 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe App</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Recipe App</h1>
-    <div id="recipe-form">
-        <h2>Add a Recipe</h2>
-        <input type="text" id="recipe-name" placeholder="Recipe Name">
+<body class="bg-gray-900 text-white p-6">
+    <h1 class="text-4xl font-bold text-red-600">Recipe App</h1>
+    <div id="recipe-form" class="bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+        <h2 class="text-2xl font-semibold">Add a Recipe</h2>
+        <input type="text" id="recipe-name" placeholder="Recipe Name" class="w-full p-2 mt-4 mb-4 bg-gray-700 text-white border border-gray-600 rounded">
         <div id="steps-container">
-            <p>Step 1: <input type="text" name="steps" placeholder="Step description"></p>
+            <p class="mb-4">Step 1: <input type="text" name="steps" placeholder="Step description" class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"></p>
         </div>
-        <button id="add-step">Add Step</button>
-        <div id="ingredients-container">
-            <p>
-                Ingredient 1: <input type="text" name="ingredients" placeholder="Ingredient name">
-                <input type="number" name="quantity" placeholder="Quantity">
-                <select name="unit-type">
+        <button id="add-step" class="bg-red-600 text-white p-2 rounded hover:bg-red-700">Add Step</button>
+        <div id="ingredients-container" class="mt-4">
+            <p class="mb-4">
+                Ingredient 1: <input type="text" name="ingredients" placeholder="Ingredient name" class="w-full p-2 mt-2 bg-gray-700 text-white border border-gray-600 rounded">
+                <input type="number" name="quantity" placeholder="Quantity" class="w-full p-2 mt-2 bg-gray-700 text-white border border-gray-600 rounded">
+                <select name="unit-type" class="w-full p-2 mt-2 bg-gray-700 text-white border border-gray-600 rounded">
                     <option value="grams">Grams</option>
                     <option value="amount">Amount</option>
                     <option value="tablespoons">Tablespoons</option>
                 </select>
             </p>
         </div>
-        <button id="add-ingredient">Add Ingredient</button>
-        <h3>Nutrition Information</h3>
-        <input type="number" id="protein" placeholder="Protein (g)">
-        <input type="number" id="fat" placeholder="Fat (g)">
-        <input type="number" id="carbs" placeholder="Carbs (g)">
-        <input type="number" id="calories" placeholder="Calories">
-        <button onclick="addRecipe()">Add Recipe</button>
+        <button id="add-ingredient" class="bg-red-600 text-white p-2 rounded hover:bg-red-700 mt-4">Add Ingredient</button>
+        <h3 class="text-xl font-semibold mt-6">Nutrition Information</h3>
+        <input type="number" id="protein" placeholder="Protein (g)" class="w-full p-2 mt-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded">
+        <input type="number" id="fat" placeholder="Fat (g)" class="w-full p-2 mt-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded">
+        <input type="number" id="carbs" placeholder="Carbs (g)" class="w-full p-2 mt-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded">
+        <input type="number" id="calories" placeholder="Calories" class="w-full p-2 mt-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded">
+        <button onclick="addRecipe()" class="bg-red-600 text-white p-2 rounded hover:bg-red-700 mt-4">Add Recipe</button>
     </div>
-    <div id="recipe-list">
-        <h2>Recipes</h2>
-        <ul id="recipes"></ul>
+    <div id="recipe-list" class="bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+        <h2 class="text-2xl font-semibold">Recipes</h2>
+        <ul id="recipes" class="list-disc list-inside"></ul>
     </div>
     <script src="app.js"></script>
 </body>
