@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<Meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipe App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe App</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Recipe App</h1>
 <div id="recipe-form">
 <h2>Add a Recipe</h2>
-    <input type="text" id="recipe-name" placeholder="Recipe Name">
-    <div id="steps-container">
-        <p>Step 1: <input type="text" name="steps" placeholder="Step description" /></p>
-    </div>
-    <button id="add-step">Add Step</span>
-    <div id="ingredients-container">
-        <p>Ingredient 1: <input type="text" name="ingredients" placeholder="Ingredient name" /> Weight: <input type="number" name="weights" placeholder="Weight (in grams)" /></p>
-    </div>
-    <button id="add-ingredient">Add Ingredient</span>
+<input type="text" id="recipe-name" placeholder="Recipe Name">
+<div id="steps-container">
+    <p>Step 1: <input type="text" name="steps" placeholder="Step description"></p>
+</div>
+<button id="add-step">Add Step</button>
+<div id="ingredients-container">
+    <p>Ingredient 1: <input type="text" name="ingredients" placeholder="Ingredient name"> Weight: <input type="number" name="weights" placeholder="Weight (in grams)"></p>
+</div>
+<button id="add-ingredient">Add Ingredient</button>
+<h3>Nutrition Information</h3>
+<input type="number" id="protein" placeholder="Protein (g)">
+<input type="number" id="fat" placeholder="Fat (g)">
+<input type="number" id="carbs" placeholder="Carbs (g)">
+<input type="number" id="calories" placeholder="Calories">
+<input type="number" id="weight" placeholder="Weight (g)">
 <button onclick="addRecipe()">Add Recipe</button>
 </div>
 <div id="recipe-list">
 <h2>Recipes</h2>
-    <ul id="recipes"></ul>
+<ul id="recipes"></ul>
 </div>
 <script src="app.js"></script>
-<script src="sql-wasm.js"></script>
 </body>
 </html>
