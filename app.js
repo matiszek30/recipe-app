@@ -15,18 +15,20 @@ function addRecipe() {
     });
     const ingredients = [];
     document.querySelectorAll('[name="ingredients"]').forEach((input, index) => {
+        const quantityInput = document.querySelectorAll('[name="quantity"]')[index];
+        const unitTypeInput = document.querySelectorAll('[name="unit-type"]')[index];
         ingredients.push({
             name: input.value || ingredients.at(index - 1).name || 'undefined',
-            weight: document.querySelector(`[name="weights"]`).value
+            quantity: quantityInput.value,
+            unit: unitTypeInput.value
         });
     });
     const protein = parseFloat(document.getElementById('protein').value);
     const fat = parseFloat(document.getElementById('fat').value);
     const carbs = parseFloat(document.getElementById('carbs').value);
     const calories = parseFloat(document.getElementById('calories').value);
-    const weight = parseFloat(document.getElementById('weight').value);
 
-    if (!name || !steps.length || isNaN(protein) || isNaN(fat) || isNaN(carbs) || isNaN(calories) || isNaN(weight)) {
+    if (!name || !steps.length || isNaN(protein) || isNaN(fat) || isNaN(carbs) || isNaN(calories)) {
         alert('Please fill in all fields');
         return;
     }
@@ -36,7 +38,7 @@ function addRecipe() {
         name,
         steps,
         ingredients,
-        nutrition: { protein, fat, carbs, calories, weight }
+        nutrition: { protein, fat, carbs, calories }
     };
     recipes.push(newRecipe);
     saveRecipesToLocalStorage(recipes);
@@ -46,11 +48,12 @@ function addRecipe() {
     document.getElementById('recipe-name').value = '';
     document.querySelectorAll('[name="steps"]').forEach((input) => (input.value = ''));
     document.querySelectorAll('[name="ingredients"]').forEach((input) => (input.value = ''));
+    document.querySelectorAll('[name="quantity"]').forEach((input) => (input.value = ''));
+    document.querySelectorAll('[name="unit-type"]').forEach((input) => (input.value = 'weight'));
     document.getElementById('protein').value = '';
     document.getElementById('fat').value = '';
     document.getElementById('carbs').value = '';
     document.getElementById('calories').value = '';
-    document.getElementById('weight').value = '';
 }
 
 function loadRecipes() {
@@ -64,8 +67,8 @@ function loadRecipes() {
             <p>Steps:</p>
             <ul>${recipe.steps.map((step) => `<li>${step}</li>`).join('')}</ul>
             <p>Ingredients:</p>
-            <ul>${recipe.ingredients.map((ingredient) => `<li>${ingredient.name}: ${ingredient.weight}g</li>`).join('')}</ul>
-            <p>Protein: ${recipe.nutrition.protein}g, Fat: ${recipe.nutrition.fat}g, Carbs: ${recipe.nutrition.carbs}g, Calories: ${recipe.nutrition.calories}, Weight: ${recipe.nutrition.weight}g</p>
+            <ul>${recipe.ingredients.map((ingredient) => `<li>${ingredient.name}: ${ingredient.quantity} ${ingredient.unit}</li>`).join('')}</ul>
+            <p>Protein: ${recipe.nutrition.protein}g, Fat: ${recipe.nutrition.fat}g, Carbs: ${recipe.nutrition.carbs}g, Calories: ${recipe.nutrition.calories}</p>
         `;
         list.appendChild(item);
     });
@@ -85,6 +88,12 @@ document.getElementById('add-ingredient').addEventListener('click', () => {
     const ingredientContainer = document.getElementById('ingredients-container');
     const ingredientCount = ingredientContainer.children.length + 1;
     const newIngredient = document.createElement('p');
-    newIngredient.innerHTML = `Ingredient ${ingredientCount}: <input type="text" name="ingredients" placeholder="Ingredient name"> Weight: <input type="number" name="weights" placeholder="Weight (in grams)">`;
+    newIngredient.innerHTML = `Ingredient ${ingredientCount}: <input type="text" name="ingredients" placeholder="Ingredient name">
+    <select name="unit-type">
+        <option value="weight">Weight (grams)</option>
+        <option value="amount">Amount</option>
+        <option value="tablespoons">Tablespoons</option>
+    </select>
+    <input type="number" name="quantity" placeholder="Quantity">`;
     ingredientContainer.appendChild(newIngredient);
 });
