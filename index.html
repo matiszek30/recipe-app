@@ -10,7 +10,7 @@
 <body class="bg-gray-900 text-white p-6">
     <h1 class="text-4xl font-bold text-red-600">Recipe App</h1>
     <div id="recipe-form" class="bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
-        <h2 class="text-2xl font-semibold">Add a Recipe</h2>
+        <h2 class="text-2xl font-semibold text-red-600">Add a Recipe</h2>
         <input type="text" id="recipe-name" placeholder="Recipe Name" class="w-full p-2 mt-4 mb-4 bg-gray-700 text-white border border-gray-600 rounded">
         <div id="steps-container">
             <p class="mb-4">Step 1: <input type="text" name="steps" placeholder="Step description" class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"></p>
@@ -28,7 +28,7 @@
             </p>
         </div>
         <button id="add-ingredient" class="bg-red-600 text-white p-2 rounded hover:bg-red-700 mt-4">Add Ingredient</button>
-        <h3 class="text-xl font-semibold mt-6">Nutrition Information</h3>
+        <h3 class="text-xl font-semibold text-red-600 mt-6">Nutrition Information</h3>
         <input type="number" id="protein" placeholder="Protein (g)" class="w-full p-2 mt-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded">
         <input type="number" id="fat" placeholder="Fat (g)" class="w-full p-2 mt-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded">
         <input type="number" id="carbs" placeholder="Carbs (g)" class="w-full p-2 mt-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded">
@@ -36,7 +36,7 @@
         <button onclick="addRecipe()" class="bg-red-600 text-white p-2 rounded hover:bg-red-700 mt-4">Add Recipe</button>
     </div>
     <div id="recipe-list" class="bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
-        <h2 class="text-2xl font-semibold">Recipes</h2>
+        <h2 class="text-2xl font-semibold text-red-600">Recipes</h2>
         <ul id="recipes" class="list-disc list-inside"></ul>
     </div>
     <script src="app.js"></script>

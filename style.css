@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
@@ -43,4 +45,16 @@ button {
 
 button:hover {
     background-color: #d40813; /* Slightly darker red on hover */
+}
+
+/* Custom styles for select dropdown to match the theme */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="5"><path fill="none" stroke="%23ffffff" stroke-width="1.5" d="M0 0l2 2 2-2"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: 50%;
+    padding-right: 1.5rem;
 }
