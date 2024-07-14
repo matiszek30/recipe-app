@@ -4,10 +4,27 @@
 <Meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe App</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to the Recipe App!</h1>
-  <p>This app will feature custom recipes.</p>
+<h1>Recipe App</h1>
+<div id="recipe-form">
+<h2>Add a Recipe</h2>
+    <input type="text" id="recipe-name" placeholder="Recipe Name">
+    <textarea id="recipe-steps" placeholder="Steps to prepare"></textarea>
+<h3>Nutrition Information</h3>
+    <input type="number" id="protein" placeholder="Protein (g)">
+    <input type="number" id="fat" placeholder="Fat (g)">
+    <input type="number" id="carbs" placeholder="Carbs (g)">
+    <input type="number" id="calories" placeholder="Calories">
+    <input type="number" id="weight" placeholder="Weight (g)">
+<button onclick="addRecipe()">Add Recipe</button>
+</div>
+<div id="recipe-list">
+<h2>Recipes</h2>
+    <ul id="recipes"></ul>
+</div>
+<script src="app.js"></script>
+<script src="sql-wasm.js"></script>
 </body>
 </html>
-
