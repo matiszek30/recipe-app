@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 20px;
     background-color: #141414; /* Dark background */
@@ -8,7 +8,7 @@ body {
 
 h1, h2, h3 {
     color: #e50914; /* Netflix red */
-    font-weight: 700; /* Bold text */
+    font-weight: 600; /* Semi-bold text */
 }
 
 #recipe-form, #recipe-list {
@@ -27,7 +27,7 @@ input[type="text"], input[type="number"], textarea {
     border-radius: 4px;
     background-color: #222222; /* Dark input background */
     color: #ffffff; /* White text in input */
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 button {
@@ -38,7 +38,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     margin: 10px 0;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 button:hover {
